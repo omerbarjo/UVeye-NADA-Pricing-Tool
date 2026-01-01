@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UVeye Pricing Calculator - NADA Promo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #ffffff;
+            color: #000000;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #ff6600;
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .section {
+            background: #ffffff;
+            border: 2px solid #000000;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 25px;
+        }
+
+        .section-header {
+            font-size: 28px;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 20px;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .option-group {
+            margin-bottom: 15px;
+        }
+
+        .radio-option, .checkbox-option {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            margin-bottom: 10px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 16px;
+        }
+
+        .radio-option:hover, .checkbox-option:hover {
+            border-color: #ff6600;
+            background: #fff5f0;
+        }
+
+        .radio-option input, .checkbox-option input {
+            margin-right: 12px;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .radio-option.selected {
+            border-color: #ff6600;
+            background: #fff5f0;
+            font-weight: 600;
+        }
+
+        select {
+            width: 100%;
+            padding: 14px;
+            font-size: 16px;
+            font-family: 'Inter', sans-serif;
+            border: 2px solid #000000;
+            border-radius: 6px;
+            background: white;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: #ff6600;
+        }
+
+        .cost-summary {
+            background: #000000;
+            color: #ffffff;
+            padding: 35px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .cost-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .cost-row.discount {
+            color: #00ff00;
+            font-weight: 600;
+        }
+
+        .savings-box {
+            background: linear-gradient(135deg, #ff6600 0%, #ff8833 100%);
+            border: 3px solid #ff6600;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(255, 102, 0, 0.3);
+        }
+
+        .savings-box .cost-row {
+            color: #ffffff;
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 0;
+        }
+
+        .cost-row.strikethrough span:last-child {
+            text-decoration: line-through;
+            opacity: 0.5;
+        }
+
+        .cost-row.promo-price {
+            color: #00ff00;
+            font-weight: 700;
+            margin-top: 5px;
+            padding-left: 30px;
+        }
+
+        .cost-row.free-month {
+            color: #00ff00;
+            font-weight: 600;
+            font-size: 16px;
+            margin-top: 5px;
+            padding-left: 30px;
+            font-style: italic;
+        }
+
+        .cost-row.total {
+            font-size: 32px;
+            font-weight: 700;
+            color: #ff6600;
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 2px solid #ff6600;
+        }
+
+        .cost-row.subtotal {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ff6600;
+            margin-top: 20px;
+        }
+
+        .promo-button {
+            width: 100%;
+            padding: 25px;
+            font-size: 28px;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #ff6600 0%, #ff8833 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 8px 20px rgba(255, 102, 0, 0.3);
+            margin-bottom: 25px;
+        }
+
+        .promo-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(255, 102, 0, 0.4);
+        }
+
+        .promo-button:active {
+            transform: translateY(-1px);
+        }
+
+        .promo-button.active {
+            background: linear-gradient(135deg, #00cc00 0%, #00ff00 100%);
+            box-shadow: 0 8px 20px rgba(0, 204, 0, 0.3);
+        }
+
+        .promo-button.active:hover {
+            box-shadow: 0 12px 30px rgba(0, 204, 0, 0.4);
+        }
+
+        .promo-badge {
+            display: inline-block;
+            background: #00ff00;
+            color: #000000;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 700;
+            margin-left: 10px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .contract-term {
+            text-align: center;
+            font-size: 20px;
+            font-weight: 600;
+            color: #000000;
+            margin: 30px 0;
+            padding: 20px;
+            background: #f5f5f5;
+            border-radius: 6px;
+        }
+
+        .footer {
+            background: #f9f9f9;
+            border: 2px solid #000000;
+            border-radius: 8px;
+            padding: 30px;
+            margin-top: 30px;
+        }
+
+        .footer h3 {
+            color: #ff6600;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .footer ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .footer li {
+            padding: 8px 0;
+            font-size: 16px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .footer li:before {
+            content: "✓";
+            color: #ff6600;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        @media (max-width: 768px) {
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            .section-header {
+                font-size: 24px;
+            }
+
+            .promo-button {
+                font-size: 22px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>UVeye Pricing Calculator</h1>
+
+        <div class="section">
+            <div class="two-column">
+                <div>
+                    <div class="section-header">Monthly Scans Per Unit</div>
+                    <div class="option-group">
+                        <label class="radio-option selected">
+                            <input type="radio" name="scans" value="6300" checked>
+                            Up to 1,500 scans - $6,300/month
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="scans" value="6500">
+                            Up to 2,000 scans - $6,500/month
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="scans" value="6700">
+                            Up to 2,500 scans - $6,700/month
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="scans" value="6900">
+                            Up to 3,000 scans - $6,900/month
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="section-header">Number of Units</div>
+                    <select id="units">
+                        <option value="1">1 Unit</option>
+                        <option value="2">2 Units</option>
+                        <option value="3">3 Units</option>
+                        <option value="4">4 Units</option>
+                        <option value="5">5 Units</option>
+                        <option value="6">6 Units</option>
+                        <option value="7">7 Units</option>
+                        <option value="8">8 Units</option>
+                        <option value="9">9 Units</option>
+                        <option value="10">10 Units</option>
+                        <option value="11">11 Units</option>
+                        <option value="12">12 Units</option>
+                        <option value="13">13 Units</option>
+                        <option value="14">14 Units</option>
+                        <option value="15">15 Units</option>
+                        <option value="16">16 Units</option>
+                        <option value="17">17 Units</option>
+                        <option value="18">18 Units</option>
+                        <option value="19">19 Units</option>
+                        <option value="20">20 Units</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">Installation One Time Fee Per Lane</div>
+            <div class="option-group">
+                <label class="radio-option selected">
+                    <input type="radio" name="installation" value="10500" data-promo="3000" checked>
+                    Standard (Above Ground) - $10,500
+                </label>
+                <label class="radio-option">
+                    <input type="radio" name="installation" value="20000" data-promo="10000">
+                    Pro (Under Ground) - $20,000
+                </label>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">UV360 (Merchandising)</div>
+            <div class="option-group">
+                <label class="radio-option selected">
+                    <input type="radio" name="merchandising" value="0" checked>
+                    Up to 50 Monthly Requests (Included)
+                </label>
+                <label class="radio-option">
+                    <input type="radio" name="merchandising" value="250">
+                    Up to 100 Monthly Requests - $250/month
+                </label>
+                <label class="radio-option">
+                    <input type="radio" name="merchandising" value="500">
+                    Up to 200 Monthly Requests - $500/month
+                </label>
+                <label class="radio-option">
+                    <input type="radio" name="merchandising" value="750">
+                    Up to 300 Monthly Requests - $750/month
+                </label>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">Optional Add-Ons</div>
+            <label class="checkbox-option">
+                <input type="checkbox" id="apollo" value="299">
+                Apollo - Interior 360 & OBD Capture - $299/month
+            </label>
+            <label class="checkbox-option">
+                <input type="checkbox" id="kiosk" value="100" data-onetime="1000">
+                Kiosk (32 inch) - $1,000 one time fee, $100/month
+            </label>
+        </div>
+
+        <div class="cost-summary">
+            <div class="cost-row" id="systemCostRow">
+                <span>Monthly System Cost:</span>
+                <span id="systemCost">$6,300</span>
+            </div>
+            <div class="cost-row promo-price" id="systemCostPromoRow" style="display: none;">
+                <span>NADA Promo Price - Monthly System Cost:</span>
+                <span id="systemCostPromo">$6,000</span>
+            </div>
+            <div class="cost-row free-month" id="freeMonthRow" style="display: none;">
+                <span>Bonus: One free Month (at the end of the agreement)</span>
+                <span></span>
+            </div>
+            <div class="cost-row">
+                <span>UV360 Merchandising:</span>
+                <span id="merchCost">Included</span>
+            </div>
+            <div class="cost-row">
+                <span>Apollo Add-On:</span>
+                <span id="apolloCost">$0</span>
+            </div>
+            <div class="cost-row">
+                <span>Kiosk Add-On:</span>
+                <span id="kioskCost">$0</span>
+            </div>
+            <div class="cost-row total">
+                <span>Total Monthly:</span>
+                <span id="monthlyTotal">$6,300</span>
+            </div>
+            <div class="cost-row subtotal" id="installTotalRow">
+                <span id="installLabel">One-Time Installation:</span>
+                <span id="installTotal">$10,500</span>
+            </div>
+            <div class="cost-row promo-price" id="installPromoRow" style="display: none;">
+                <span>NADA Promo Price - One Time Installation:</span>
+                <span id="installPromo">$3,000</span>
+            </div>
+        </div>
+
+        <div class="savings-box" id="savingsBox" style="display: none;">
+            <div class="cost-row">
+                <span>NADA Promo Savings During Contract Term:</span>
+                <span id="totalSavings">$0</span>
+            </div>
+        </div>
+
+        <button class="promo-button" id="promoBtn" onclick="togglePromo()">
+            🎉 Apply NADA Promo 🎉
+        </button>
+
+        <div class="contract-term">
+            Contract Term: 36 Months
+        </div>
+
+        <div class="footer">
+            <h3>What's Included:</h3>
+            <ul>
+                <li>Specified number of scans and UV360 requests per month</li>
+                <li>Unlimited Users</li>
+                <li>Customer Success Manager</li>
+                <li>24/7 Cloud Access to past 6 months of scans</li>
+                <li>System Maintenance</li>
+                <li>Software and Hardware upgrades</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        let promoActive = false;
+
+        function formatCurrency(amount) {
+            return '$' + amount.toLocaleString();
+        }
+
+        function togglePromo() {
+            promoActive = !promoActive;
+            const btn = document.getElementById('promoBtn');
+            
+            if (promoActive) {
+                btn.textContent = '✓ NADA PROMO APPLIED ✓';
+                btn.classList.add('active');
+            } else {
+                btn.textContent = '🎉 Apply NADA Promo 🎉';
+                btn.classList.remove('active');
+            }
+            
+            updatePricing();
+        }
+
+        function updatePricing() {
+            // Get selected values
+            const scanPrice = parseInt(document.querySelector('input[name="scans"]:checked').value);
+            const units = parseInt(document.getElementById('units').value);
+            const installationElement = document.querySelector('input[name="installation"]:checked');
+            const installation = parseInt(installationElement.value);
+            const installationPromo = parseInt(installationElement.getAttribute('data-promo'));
+            const merchandising = parseInt(document.querySelector('input[name="merchandising"]:checked').value);
+            const apollo = document.getElementById('apollo').checked ? 299 : 0;
+            const kiosk = document.getElementById('kiosk').checked ? 100 : 0;
+            const kioskOnetime = document.getElementById('kiosk').checked ? 1000 * units : 0;
+
+            // Apply promo discounts
+            const scanDiscount = promoActive ? 300 : 0;
+            const finalScanPrice = scanPrice - scanDiscount;
+            const finalInstallation = promoActive ? installationPromo : installation;
+
+            // Calculate costs
+            const systemCost = scanPrice * units;
+            const systemCostPromo = finalScanPrice * units;
+            const monthlyTotal = systemCostPromo + merchandising + apollo + kiosk;
+            const installTotal = (installation * units) + kioskOnetime;
+            const installTotalPromo = (finalInstallation * units) + kioskOnetime;
+
+            // Calculate total savings (installation savings + monthly savings over 36 months + 1 free month)
+            const installSavings = (installation - finalInstallation) * units;
+            const monthlySavings = scanDiscount * units * 36;
+            const freeMonthValue = systemCostPromo; // Value of one free month at promo price
+            const totalSavings = installSavings + monthlySavings + freeMonthValue;
+
+            // Update display
+            document.getElementById('systemCost').textContent = formatCurrency(systemCost);
+            document.getElementById('systemCostPromo').textContent = formatCurrency(systemCostPromo);
+            document.getElementById('merchCost').textContent = merchandising === 0 ? 'Included' : formatCurrency(merchandising);
+            document.getElementById('apolloCost').textContent = formatCurrency(apollo);
+            document.getElementById('kioskCost').textContent = formatCurrency(kiosk);
+            document.getElementById('monthlyTotal').textContent = formatCurrency(monthlyTotal);
+            document.getElementById('installTotal').textContent = formatCurrency(installTotal);
+            document.getElementById('installPromo').textContent = formatCurrency(installTotalPromo);
+            document.getElementById('totalSavings').textContent = formatCurrency(totalSavings);
+            
+            // Show/hide promo pricing
+            if (promoActive) {
+                document.getElementById('systemCostRow').classList.add('strikethrough');
+                document.getElementById('systemCostPromoRow').style.display = 'flex';
+                document.getElementById('freeMonthRow').style.display = 'flex';
+                document.getElementById('installTotalRow').classList.add('strikethrough');
+                document.getElementById('installPromoRow').style.display = 'flex';
+                document.getElementById('savingsBox').style.display = 'block';
+            } else {
+                document.getElementById('systemCostRow').classList.remove('strikethrough');
+                document.getElementById('systemCostPromoRow').style.display = 'none';
+                document.getElementById('freeMonthRow').style.display = 'none';
+                document.getElementById('installTotalRow').classList.remove('strikethrough');
+                document.getElementById('installPromoRow').style.display = 'none';
+                document.getElementById('savingsBox').style.display = 'none';
+            }
+            
+            // Update installation label based on kiosk selection
+            document.getElementById('installLabel').textContent = document.getElementById('kiosk').checked 
+                ? 'One-Time Installation+Kiosk:' 
+                : 'One-Time Installation:';
+        }
+
+        // Add event listeners
+        document.querySelectorAll('input[type="radio"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                // Update visual selection
+                document.querySelectorAll(`input[name="${this.name}"]`).forEach(r => {
+                    r.closest('.radio-option').classList.remove('selected');
+                });
+                this.closest('.radio-option').classList.add('selected');
+                updatePricing();
+            });
+        });
+
+        document.getElementById('units').addEventListener('change', updatePricing);
+        document.getElementById('apollo').addEventListener('change', updatePricing);
+        document.getElementById('kiosk').addEventListener('change', updatePricing);
+
+        // Initialize
+        updatePricing();
+    </script>
+</body>
+</html>
