@@ -1,0 +1,592 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.2">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;UVeye Pricing Calculator - NADA Promo&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>* {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-sizing: border-box;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Inter', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #ffffff;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #000000;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 40px 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.6;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.container {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 1000px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>h1 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #ff6600;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 42px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 40px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.section {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #ffffff;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 2px solid #000000;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 30px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 25px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.section-header {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 28px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #000000;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.two-column {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>grid-template-columns: 1fr 1fr;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 30px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.option-group {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.radio-option, .checkbox-option {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 2px solid #e0e0e0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.2s;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.radio-option:hover, .checkbox-option:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-color: #ff6600;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #fff5f0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.radio-option input, .checkbox-option input {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-right: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.radio-option.selected {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-color: #ff6600;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #fff5f0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>select {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Inter', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 2px solid #000000;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 500;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>select:focus {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>outline: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-color: #ff6600;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.cost-summary {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #000000;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #ffffff;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 35px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 25px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.cost-row {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: space-between;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 18px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.cost-row.discount {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #00ff00;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.savings-box {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(135deg, #ff6600 0%, #ff8833 100%);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 3px solid #ff6600;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 4px 15px rgba(255, 102, 0, 0.3);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.savings-box .cost-row {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #ffffff;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 22px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.cost-row.strikethrough span:last-child {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-decoration: line-through;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>opacity: 0.5;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.cost-row.promo-price {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #00ff00;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-left: 30px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.cost-row.free-month {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #00ff00;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-left: 30px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-style: italic;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.cost-row.total {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 32px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #ff6600;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 25px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-top: 25px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-top: 2px solid #ff6600;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.cost-row.subtotal {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 24px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #ff6600;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.promo-button {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 25px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 28px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Inter', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(135deg, #ff6600 0%, #ff8833 100%);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.3s;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-transform: uppercase;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>letter-spacing: 2px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 8px 20px rgba(255, 102, 0, 0.3);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 25px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.promo-button:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-3px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 12px 30px rgba(255, 102, 0, 0.4);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.promo-button:active {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-1px);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.promo-button.active {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(135deg, #00cc00 0%, #00ff00 100%);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 8px 20px rgba(0, 204, 0, 0.3);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.promo-button.active:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 12px 30px rgba(0, 204, 0, 0.4);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.promo-badge {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: inline-block;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #00ff00;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #000000;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 8px 16px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-left: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>animation: pulse 2s infinite;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>@keyframes pulse {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>0%, 100% { opacity: 1; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>50% { opacity: 0.7; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.contract-term {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #000000;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 30px 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #f5f5f5;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.footer {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #f9f9f9;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 2px solid #000000;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 30px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 30px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.footer h3 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #ff6600;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 24px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.footer ul {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>list-style: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-left: 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.footer li {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 8px 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-left: 25px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.footer li:before {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>content: "✓";</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #ff6600;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>left: 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (max-width: 768px) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.two-column {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>grid-template-columns: 1fr;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>h1 {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>font-size: 32px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>.section-header {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>font-size: 24px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>.promo-button {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>font-size: 22px;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>padding: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1&gt;UVeye Pricing Calculator&lt;/h1&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="two-column"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="section-header"&gt;Monthly Scans Per Unit&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="option-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;label class="radio-option selected"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;input type="radio" name="scans" value="6300" checked&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>Up to 1,500 scans - $6,300/month</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;label class="radio-option"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;input type="radio" name="scans" value="6500"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>Up to 2,000 scans - $6,500/month</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;label class="radio-option"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;input type="radio" name="scans" value="6700"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>Up to 2,500 scans - $6,700/month</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;label class="radio-option"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;input type="radio" name="scans" value="6900"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>Up to 3,000 scans - $6,900/month</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="section-header"&gt;Number of Units&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;select id="units"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="1"&gt;1 Unit&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="2"&gt;2 Units&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="3"&gt;3 Units&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="4"&gt;4 Units&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="5"&gt;5 Units&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="6"&gt;6 Units&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="7"&gt;7 Units&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="8"&gt;8 Units&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="9"&gt;9 Units&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="10"&gt;10 Units&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="11"&gt;11 Units&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="12"&gt;12 Units&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="13"&gt;13 Units&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="14"&gt;14 Units&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="15"&gt;15 Units&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="16"&gt;16 Units&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="17"&gt;17 Units&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="18"&gt;18 Units&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="19"&gt;19 Units&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="20"&gt;20 Units&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="section-header"&gt;Installation One Time Fee Per Lane&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="option-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;label class="radio-option selected"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input type="radio" name="installation" value="10500" data-promo="3000" checked&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>Standard (Above Ground) - $10,500</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;label class="radio-option"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input type="radio" name="installation" value="20000" data-promo="10000"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>Pro (Under Ground) - $20,000</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="section-header"&gt;UV360 (Merchandising)&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="option-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;label class="radio-option selected"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input type="radio" name="merchandising" value="0" checked&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>Up to 50 Monthly Requests (Included)</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;label class="radio-option"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input type="radio" name="merchandising" value="250"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>Up to 100 Monthly Requests - $250/month</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;label class="radio-option"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input type="radio" name="merchandising" value="500"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>Up to 200 Monthly Requests - $500/month</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;label class="radio-option"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input type="radio" name="merchandising" value="750"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>Up to 300 Monthly Requests - $750/month</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="section-header"&gt;Optional Add-Ons&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;label class="checkbox-option"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;input type="checkbox" id="apollo" value="299"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Apollo - Interior 360 &amp; OBD Capture - $299/month</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;label class="checkbox-option"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;input type="checkbox" id="kiosk" value="100" data-onetime="1000"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Kiosk (32 inch) - $1,000 one time fee, $100/month</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="cost-summary"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="cost-row" id="systemCostRow"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span&gt;Monthly System Cost:&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span id="systemCost"&gt;$6,300&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="cost-row promo-price" id="systemCostPromoRow" style="display: none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span&gt;NADA Promo Price - Monthly System Cost:&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span id="systemCostPromo"&gt;$6,000&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="cost-row free-month" id="freeMonthRow" style="display: none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span&gt;Bonus: One free Month (at the end of the agreement)&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="cost-row"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span&gt;UV360 Merchandising:&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span id="merchCost"&gt;Included&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="cost-row"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span&gt;Apollo Add-On:&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span id="apolloCost"&gt;$0&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="cost-row"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span&gt;Kiosk Add-On:&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span id="kioskCost"&gt;$0&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="cost-row total"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span&gt;Total Monthly:&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span id="monthlyTotal"&gt;$6,300&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="cost-row subtotal" id="installTotalRow"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span id="installLabel"&gt;One-Time Installation:&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span id="installTotal"&gt;$10,500&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="cost-row promo-price" id="installPromoRow" style="display: none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span&gt;NADA Promo Price - One Time Installation:&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span id="installPromo"&gt;$3,000&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="savings-box" id="savingsBox" style="display: none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="cost-row"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span&gt;NADA Promo Savings During Contract Term:&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span id="totalSavings"&gt;$0&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="promo-button" id="promoBtn" onclick="togglePromo()"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>🎉 Apply NADA Promo 🎉</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/button&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="contract-term"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Contract Term: 36 Months</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="footer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;What's Included:&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;Specified number of scans and UV360 requests per month&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;Unlimited Users&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;Customer Success Manager&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;24/7 Cloud Access to past 6 months of scans&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;System Maintenance&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;Software and Hardware upgrades&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let promoActive = false;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function formatCurrency(amount) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>return '$' + amount.toLocaleString();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function togglePromo() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>promoActive = !promoActive;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const btn = document.getElementById('promoBtn');</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (promoActive) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>btn.textContent = '✓ NADA PROMO APPLIED ✓';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>btn.classList.add('active');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>btn.textContent = '🎉 Apply NADA Promo 🎉';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>btn.classList.remove('active');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>updatePricing();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function updatePricing() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Get selected values</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const scanPrice = parseInt(document.querySelector('input[name="scans"]:checked').value);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const units = parseInt(document.getElementById('units').value);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const installationElement = document.querySelector('input[name="installation"]:checked');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const installation = parseInt(installationElement.value);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const installationPromo = parseInt(installationElement.getAttribute('data-promo'));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const merchandising = parseInt(document.querySelector('input[name="merchandising"]:checked').value);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const apollo = document.getElementById('apollo').checked ? 299 : 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const kiosk = document.getElementById('kiosk').checked ? 100 : 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const kioskOnetime = document.getElementById('kiosk').checked ? 1000 * units : 0;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Apply promo discounts</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const scanDiscount = promoActive ? 300 : 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const finalScanPrice = scanPrice - scanDiscount;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const finalInstallation = promoActive ? installationPromo : installation;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Calculate costs</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const systemCost = scanPrice * units;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const systemCostPromo = finalScanPrice * units;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const monthlyTotal = systemCostPromo + merchandising + apollo + kiosk;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const installTotal = (installation * units) + kioskOnetime;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const installTotalPromo = (finalInstallation * units) + kioskOnetime;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Calculate total savings (installation savings + monthly savings over 36 months + 1 free month)</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const installSavings = (installation - finalInstallation) * units;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const monthlySavings = scanDiscount * units * 36;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const freeMonthValue = systemCostPromo; // Value of one free month at promo price</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const totalSavings = installSavings + monthlySavings + freeMonthValue;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Update display</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('systemCost').textContent = formatCurrency(systemCost);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('systemCostPromo').textContent = formatCurrency(systemCostPromo);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('merchCost').textContent = merchandising === 0 ? 'Included' : formatCurrency(merchandising);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('apolloCost').textContent = formatCurrency(apollo);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('kioskCost').textContent = formatCurrency(kiosk);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('monthlyTotal').textContent = formatCurrency(monthlyTotal);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('installTotal').textContent = formatCurrency(installTotal);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('installPromo').textContent = formatCurrency(installTotalPromo);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('totalSavings').textContent = formatCurrency(totalSavings);</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Show/hide promo pricing</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (promoActive) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('systemCostRow').classList.add('strikethrough');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('systemCostPromoRow').style.display = 'flex';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('freeMonthRow').style.display = 'flex';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('installTotalRow').classList.add('strikethrough');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('installPromoRow').style.display = 'flex';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('savingsBox').style.display = 'block';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('systemCostRow').classList.remove('strikethrough');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('systemCostPromoRow').style.display = 'none';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('freeMonthRow').style.display = 'none';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('installTotalRow').classList.remove('strikethrough');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('installPromoRow').style.display = 'none';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('savingsBox').style.display = 'none';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Update installation label based on kiosk selection</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('installLabel').textContent = document.getElementById('kiosk').checked<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>? 'One-Time Installation+Kiosk:'<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>: 'One-Time Installation:';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Add event listeners</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.querySelectorAll('input[type="radio"]').forEach(radio =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>radio.addEventListener('change', function() {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Update visual selection</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.querySelectorAll(`input[name="${this.name}"]`).forEach(r =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>r.closest('.radio-option').classList.remove('selected');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>});</p>
+<p class="p1"><span class="Apple-converted-space">                </span>this.closest('.radio-option').classList.add('selected');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>updatePricing();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById('units').addEventListener('change', updatePricing);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById('apollo').addEventListener('change', updatePricing);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById('kiosk').addEventListener('change', updatePricing);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Initialize</p>
+<p class="p1"><span class="Apple-converted-space">        </span>updatePricing();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
